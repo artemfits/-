@@ -1,43 +1,48 @@
+<img width="416" height="370" alt="image" src="https://github.com/user-attachments/assets/ce0fe67b-48ed-497a-960c-188cb1698b57" />
 Задание 1: Игра «Угадай число»
 
 1. Поле ввода пустое, счетчик попыток равен нулю.
 2. Введите число и нажмите кнопку угадать!.
 3. Программа покажет подсказку («Больше»/«Меньше») и увеличит счетчик попыток.
 4. Нажмите кнопку заново, чтобы сбросить игру и загадать новое число.
-<img width="416" height="370" alt="image" src="https://github.com/user-attachments/assets/ce0fe67b-48ed-497a-960c-188cb1698b57" />
 
 
 
 
-
+<img width="599" height="372" alt="image" src="https://github.com/user-attachments/assets/5f8cfcd5-cfe2-4e2b-9c1c-bc60408960fb" />
 Задание 2: Случайный цвет
 
 1. Фон окна имеет стандартный цвет.
 2. Нажмите кнопку случайный цвет.
 3. Задний фон формы мгновенно окрасится в новый случайный оттенок.
-<img width="599" height="372" alt="image" src="https://github.com/user-attachments/assets/5f8cfcd5-cfe2-4e2b-9c1c-bc60408960fb" />
 
 
 
 
+
+<img width="597" height="381" alt="image" src="https://github.com/user-attachments/assets/10ab603d-2c2b-4fad-942f-983e160d5112" />
 
 Задание 3: Всплывающее окно
 
 1. Поле ввода текста пустое.
 2. Введите любое слово в текстовое поле.
 3. Нажмите кнопку отобразить, чтобы текст вывелся во всплывающем окне сообщения.
-<img width="597" height="381" alt="image" src="https://github.com/user-attachments/assets/10ab603d-2c2b-4fad-942f-983e160d5112" />
 
 
 
 
+<img width="598" height="334" alt="image" src="https://github.com/user-attachments/assets/3107f3ff-cf93-45df-9654-d68cb40c5739" />
 
 Задание 4: Кнопки-дублеры
 
 1. Верхнее текстовое поле пустое.
 2. Нажмите на одну из трех кнопок: гав, мяу или аыф.
 3. Соответствующий текст автоматически скопируется и отобразится в верхнем поле.
-<img width="598" height="334" alt="image" src="https://github.com/user-attachments/assets/3107f3ff-cf93-45df-9654-d68cb40c5739" />
+
+
+
+
+<img width="600" height="326" alt="image" src="https://github.com/user-attachments/assets/9c8b6024-ec40-4c8d-afd9-2df2c6944c3e" />
 
 
 
@@ -48,7 +53,7 @@
 1. Напротив четырех кнопок пусто, надписи скрыты.
 2. Нажмите на любую из кнопок (например, кнопка 4).
 3. Справа от нажатой кнопки появится скрытый текст, поясняющий действие.
-<img width="600" height="326" alt="image" src="https://github.com/user-attachments/assets/9c8b6024-ec40-4c8d-afd9-2df2c6944c3e" />
+<img width="600" height="329" alt="image" src="https://github.com/user-attachments/assets/80992b35-2876-4a04-89c0-3cc74861a8e3" />
 
 
 
@@ -59,9 +64,19 @@
 
 1. В окне «задание 6» текстовое поле доступно для ввода. Нажмите блокировать, чтобы сделать поле серым и неактивным. Нажмите разблокировать для возврата доступа.
 2. В окне «Заметки» поле для ввода текста пустое. Введите текст вручную или нажмите кнопку загрузить для открытия файла.
-<img width="600" height="329" alt="image" src="https://github.com/user-attachments/assets/80992b35-2876-4a04-89c0-3cc74861a8e3" />
+<img width="498" height="273" alt="image" src="https://github.com/user-attachments/assets/9cb918b9-0ea6-4b17-9aab-7eeea8e05913" />
 
 
+
+
+
+Задание 7: Заметки
+
+1. Изначально большое текстовое поле пустое.
+2. Введите любой текст или заметку в рабочую область формы.
+3. Нажмите кнопку сохранить, чтобы записать введенный текст в файл.
+4. Нажмите кнопку загрузить, чтобы открыть ранее сохраненный текстовый файл и отобразить его содержимое в поле.
+<img width="693" height="482" alt="image" src="https://github.com/user-attachments/assets/da626f61-9fb7-482d-84cc-e80fc14019f9" />
 
 
 
@@ -72,18 +87,19 @@
 2. Введите значения в поля число 1 и число 2.
 3. Нажмите на одну из кнопок операций (+, -, *, /) справа.
 4. Нажмите кнопку рассчитать!, чтобы в поле ответ появился результат.
-
-<img width="498" height="273" alt="image" src="https://github.com/user-attachments/assets/9cb918b9-0ea6-4b17-9aab-7eeea8e05913" />
-<img width="693" height="482" alt="image" src="https://github.com/user-attachments/assets/da626f61-9fb7-482d-84cc-e80fc14019f9" />
 <img width="496" height="359" alt="image" src="https://github.com/user-attachments/assets/079a1629-7727-4118-ba0a-b037c0fca667" />
+
+
+
+
+
+Задание 8 (Вариант 2): Калькулятор-панель
+
+1. Главное табло вывода результатов пустое.
+2. Вводите числа и математические знаки, нажимая мышкой на кнопки графической панели.
+3. Нажмите кнопку =, чтобы получить итоговое решение на экране.
+4. Нажмите кнопку Стереть, чтобы полностью очистить табло.
 <img width="413" height="441" alt="image" src="https://github.com/user-attachments/assets/3f1c4ced-84c9-46b8-91de-8c8805a59be9" />
-
-
-
-
-
-
-
 
 
 
