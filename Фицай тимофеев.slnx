@@ -1,0 +1,70 @@
+using System;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
+
+namespace WinFormsPractice
+{
+    public class Task7Form : Form
+    {
+        private TextBox textBox1;
+
+        public Task7Form()
+        {
+            Text = "Заметки";
+            ClientSize = new Size(700, 450);
+            StartPosition = FormStartPosition.CenterScreen;
+
+            textBox1 = new TextBox();
+            textBox1.Multiline = true;        
+            textBox1.ScrollBars = ScrollBars.Vertical;
+            textBox1.Left = 10; textBox1.Top = 10; textBox1.Width = 680; textBox1.Height = 360;
+
+            Button btnSave = new Button();
+            btnSave.Text = "сохранить";
+            btnSave.Left = 50; btnSave.Top = 385; btnSave.Width = 180; btnSave.Height = 40;
+            btnSave.Click += BtnSave_Click;
+
+            Button btnLoad = new Button();
+            btnLoad.Text = "загрузить";
+            btnLoad.Left = 470; btnLoad.Top = 385; btnLoad.Width = 180; btnLoad.Height = 40;
+            btnLoad.Click += BtnLoad_Click;
+
+            Controls.Add(textBox1);
+            Controls.Add(btnSave);
+            Controls.Add(btnLoad);
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt|All Files (*.*)|*.*";
+                saveFileDialog.Title = "Сохранить";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    File.WriteAllText(saveFileDialog.FileName, textBox1.Text);
+                    MessageBox.Show("Заметка сохранена!", "Успех",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void BtnLoad_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+                openFileDialog.Title = "Открыть заметку";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string loadedText = File.ReadAllText(openFileDialog.FileName);
+                    textBox1.Clear();
+                    textBox1.Text = loadedText;
+                    MessageBox.Show("Заметка загружена!", "Успех",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+    }
+}

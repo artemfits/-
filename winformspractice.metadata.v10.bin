@@ -1,0 +1,97 @@
+using System;
+using System.Drawing;
+using System.Globalization;
+using System.Windows.Forms;
+
+namespace WinFormsPractice
+{
+    public class Task8Var1Form : Form
+    {
+        private TextBox txtNum1, txtOp, txtNum2, txtResult;
+
+        public Task8Var1Form()
+        {
+            Text = "Калькулятор (вариант 1)";
+            ClientSize = new Size(500, 330);
+            StartPosition = FormStartPosition.CenterScreen;
+
+            txtNum1 = AddRow("число 1", 20);
+            txtOp = AddRow("операция", 70);
+            txtNum2 = AddRow("число 2", 120);
+            txtResult = AddRow("ответ", 170);
+            txtResult.ReadOnly = true; 
+
+            Button btn = new Button();
+            btn.Text = "рассчитать!";
+            btn.Left = 150; btn.Top = 235; btn.Width = 160; btn.Height = 40;
+            btn.Click += BtnCalc_Click;
+            Controls.Add(btn);
+
+            string[] ops = { "+", "-", "*", "/" };
+            for (int i = 0; i < ops.Length; i++)
+            {
+                Button b = new Button();
+                b.Text = ops[i];
+                b.Left = 400 + (i % 2) * 45;
+                b.Top = 65 + (i / 2) * 45;
+                b.Width = 40; b.Height = 40;
+                b.Click += (sender, e) => txtOp.Text = ((Button)sender).Text;
+                Controls.Add(b);
+            }
+        }
+
+        private TextBox AddRow(string caption, int top)
+        {
+            Label l = new Label();
+            l.Text = caption;
+            l.Left = 20; l.Top = top + 5; l.AutoSize = true;
+
+            TextBox t = new TextBox();
+            t.Left = 110; t.Top = top; t.Width = 270;
+
+            Controls.Add(l);
+            Controls.Add(t);
+            return t;
+        }
+
+        private bool TryParseNumber(string text, out double value)
+        {
+            text = text.Trim().Replace(',', '.');
+            return double.TryParse(text, NumberStyles.Float, CultureInfo.InvariantCulture, out value);
+        }
+
+        private void BtnCalc_Click(object sender, EventArgs e)
+        {
+            double a, b, result;
+
+            if (!TryParseNumber(txtNum1.Text, out a) || !TryParseNumber(txtNum2.Text, out b))
+            {
+                MessageBox.Show("Введите корректные числа!", "Ошибка ввода",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            switch (txtOp.Text.Trim())
+            {
+                case "+": result = a + b; break;
+                case "-": result = a - b; break;
+                case "*": result = a * b; break;
+                case "/":
+                    if (b == 0)
+                    {
+                        MessageBox.Show("На ноль делить нельзя!", "Ошибка",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    result = a / b;
+                    break;
+                default:
+                    MessageBox.Show("Операция должна быть одной из: + - * /", "Ошибка ввода",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+            }
+
+            txtResult.Text = result.ToString(CultureInfo.InvariantCulture);
+        }
+    }
+}
